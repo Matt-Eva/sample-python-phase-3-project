@@ -4,7 +4,9 @@ def select_days(day_number):
     while len(days) < day_number:
         day = check_proper_day()
         days.append(day)
+
     ordered_days = sorted(days, key=lambda day: day[1])
+
     return ordered_days
 
 def check_proper_day():
@@ -17,8 +19,10 @@ def check_proper_day():
             "friday": 6,
             "saturday": 7
         }
+        
     prompt = "Enter which days of the week you'd like to work out. "
     day = input(prompt)
+
     if proper_days[day] != None:
         return [day, proper_days[day]]
     else:
